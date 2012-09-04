@@ -14,8 +14,10 @@
 		%script(type="text/javascript" src="/js/underscore-min.js")
 		%script(type="text/javascript" src="/client.js")
 	%body
+		%div.tabs
 		%section.main
 			=yield
+		%div.appdrawer
 		%footer{:class => authenticated? ? "logout" : identified? ? "login" : claimed? ? "login" : "claim"}
 			- if authenticated?
 				%form{:method => 'POST', :action => "/logout"}
